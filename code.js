@@ -24,6 +24,7 @@ text.addEventListener("transitionend", (e) => {
 
 
 revealButton.addEventListener("click", revealTheTruth);
+const listId = "83696782698465";
 
 function revealTheTruth() {
     if (secretUnlocked) {
@@ -39,17 +40,12 @@ function revealTheTruth() {
     }
 }
 
-function hideVideo() {
-
-}
-
 function removeThings() {
     text.classList.add("gone");
     revealButton.classList.add("gone");
 }
 
-const SECRET_WORD = "secreta";
-let inputsQueue = new Queue(SECRET_WORD.length);
+let inputsQueue = new Queue(7);
 let secretUnlocked = false;
 let reading = true;
 
@@ -57,14 +53,14 @@ document.addEventListener("keydown", (event) => {
     if (!reading)
         return;
 
-    const key = event.key;
+    const key = event.which;
     inputsQueue.add(key);
     checkForCode();
 });
 
 function checkForCode() {
     const currentCode = [...inputsQueue.elements].join("");
-    if (currentCode.toLowerCase() == SECRET_WORD.toLowerCase()) {
+    if (currentCode.toLowerCase() == listId.toLowerCase()) {
         showButtonToRevealTheTruth();
     }
 }
