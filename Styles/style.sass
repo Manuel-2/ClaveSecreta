@@ -1,0 +1,80 @@
+// colors
+$dummy: #ffaa
+
+// extras
+$footer-height: 65px
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+
+body
+    width: 100vw
+    height: 100vh
+    background-color: black
+
+main
+    width: 100%
+    min-height: calc( 100% - $footer-height )
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.main__video
+    position: absolute
+    z-index: -1
+    width: 100%
+    max-height: 100%
+    opacity: 0.0
+    transition: opacity 0.5s
+
+.main__video--reveal
+    opacity: 1
+
+.main__clue
+    font-size: 4.2rem
+    color: white
+    font-weight: bold
+    transition: opacity 0.5s
+
+.main__clue--disapear
+    opacity: 0.0
+
+.gone
+    display: none
+
+.secret_button
+    margin-top: 25px
+    padding: 15px
+    border-radius: 25px
+    border: solid 3px #aaaaaa
+    font-size: 2.4rem
+    transition: transform 0.25s,opacity 0.5s
+    display: none
+
+.secret_button--show
+    display: block
+
+.secret_button:active
+    transform: scale(90%)
+
+.secret_button--disapear
+    opacity: 0.0
+
+footer
+    width: 100%
+    height: $footer-height
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 2rem
+    color: white
+    background-color: #ffffff05
+
+    a
+        color: #1e70bd
